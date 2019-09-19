@@ -98,25 +98,25 @@
 
 
 
-  <meta name="description" content="在公司上班的这段时间，我遇到了不少问题，也总结了许多  span标签跟在a标签后，如果设置a的width为100%，会引起span错位   span标签内若无内容，设置width无效，需加 display: block; 才生效   设置button居中，加 display: block; 和 margin: 0 auto，即设置button为block块   可设置width和padding来间">
-<meta name="keywords" content="summery">
+  <meta name="description" content="概念回流：重新对DOM树进行渲染，当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。渲染树和DOM树有点像，但是是有区别的。DOM树完全和html标签一一对应，但是渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素重绘：一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，如改变了背景颜色、文字颜色、边框">
+<meta name="keywords" content="回流(重排)和重绘">
 <meta property="og:type" content="article">
-<meta property="og:title" content="wrongSummery">
-<meta property="og:url" content="https://seasonin.github.io/markdownBlog.github.io/2019/05/11/wrongSummery/index.html">
+<meta property="og:title" content="reflowAndRepaint">
+<meta property="og:url" content="https://seasonin.github.io/markdownBlog.github.io/2019/09/19/reflowAndRepaint/index.html">
 <meta property="og:site_name" content="seasonin">
-<meta property="og:description" content="在公司上班的这段时间，我遇到了不少问题，也总结了许多  span标签跟在a标签后，如果设置a的width为100%，会引起span错位   span标签内若无内容，设置width无效，需加 display: block; 才生效   设置button居中，加 display: block; 和 margin: 0 auto，即设置button为block块   可设置width和padding来间">
+<meta property="og:description" content="概念回流：重新对DOM树进行渲染，当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。渲染树和DOM树有点像，但是是有区别的。DOM树完全和html标签一一对应，但是渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素重绘：一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，如改变了背景颜色、文字颜色、边框">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-17T02:20:10.114Z">
+<meta property="og:updated_time" content="2019-09-19T06:35:24.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wrongSummery">
-<meta name="twitter:description" content="在公司上班的这段时间，我遇到了不少问题，也总结了许多  span标签跟在a标签后，如果设置a的width为100%，会引起span错位   span标签内若无内容，设置width无效，需加 display: block; 才生效   设置button居中，加 display: block; 和 margin: 0 auto，即设置button为block块   可设置width和padding来间">
+<meta name="twitter:title" content="reflowAndRepaint">
+<meta name="twitter:description" content="概念回流：重新对DOM树进行渲染，当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。渲染树和DOM树有点像，但是是有区别的。DOM树完全和html标签一一对应，但是渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素重绘：一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，如改变了背景颜色、文字颜色、边框">
 
 
 
 
 
 
-  <link rel="canonical" href="https://seasonin.github.io/markdownBlog.github.io/2019/05/11/wrongSummery/">
+  <link rel="canonical" href="https://seasonin.github.io/markdownBlog.github.io/2019/09/19/reflowAndRepaint/">
 
 
 
@@ -126,7 +126,7 @@
   };
 </script>
 
-  <title>wrongSummery | seasonin</title>
+  <title>reflowAndRepaint | seasonin</title>
   
 
 
@@ -376,7 +376,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://seasonin.github.io/markdownBlog.github.io/markdownBlog.github.io/2019/05/11/wrongSummery/">
+    <link itemprop="mainEntityOfPage" href="https://seasonin.github.io/markdownBlog.github.io/markdownBlog.github.io/2019/09/19/reflowAndRepaint/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yangxinming">
@@ -393,7 +393,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">wrongSummery
+          <h1 class="post-title" itemprop="name headline">reflowAndRepaint
 
               
             
@@ -419,53 +419,16 @@
                 
               
 
-              <time title="创建时间：2019-05-11 10:42:46" itemprop="dateCreated datePublished" datetime="2019-05-11T10:42:46+08:00">2019-05-11</time>
+              <time title="创建时间：2019-09-19 13:54:04 / 修改时间：14:35:24" itemprop="dateCreated datePublished" datetime="2019-09-19T13:54:04+08:00">2019-09-19</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-09-17 10:20:10" itemprop="dateModified" datetime="2019-09-17T10:20:10+08:00">2019-09-17</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/markdownBlog.github.io/categories/学习/" itemprop="url" rel="index"><span itemprop="name">学习</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/markdownBlog.github.io/categories/学习/总结/" itemprop="url" rel="index"><span itemprop="name">总结</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -479,8 +442,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/markdownBlog.github.io/2019/05/11/wrongSummery/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/markdownBlog.github.io/2019/05/11/wrongSummery/" itemprop="commentCount"></span>
+                <a href="/markdownBlog.github.io/2019/09/19/reflowAndRepaint/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/markdownBlog.github.io/2019/09/19/reflowAndRepaint/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -508,47 +471,36 @@
       
 
       
-        <p>在公司上班的这段时间，我遇到了不少问题，也总结了许多</p>
-<blockquote>
-<p>span标签跟在a标签后，如果设置a的width为100%，会引起span错位</p>
-</blockquote>
-<blockquote>
-<p>span标签内若无内容，设置width无效，需加 display: block; 才生效</p>
-</blockquote>
-<blockquote>
-<p>设置button居中，加 display: block; 和 margin: 0 auto，即设置button为block块</p>
-</blockquote>
-<blockquote>
-<p>可设置width和padding来间接设置左右边距</p>
-</blockquote>
-<blockquote>
-<p>bootStrap的container容器可能会影响div块的长度</p>
-</blockquote>
-<blockquote>
-<p>几张块（如div、img）层叠在一起时可能会导致内层的元素（如button）无法正常使用，需设置好嵌套关系和z-index来解决，z-index设置对比层的同层关系</p>
-</blockquote>
-<blockquote>
-<p>避免直接命名class为container等框架频繁词，应加上s-等前缀，避免样式冲突等问题</p>
-</blockquote>
-<blockquote>
-<p>top、left可设置距离外元素的边距。结合translate: transform(x,y)，x、y指本元素左上角距离偏移量。</p>
-</blockquote>
-<blockquote>
-<p>遵循样式尽量简洁的原则，避免造成样式混乱</p>
-</blockquote>
-<blockquote>
-<p>a标签的width尽量大，如与其父级的div块同宽，方便用户点击</p>
-</blockquote>
-<blockquote>
-<p>bootstrap container里面的row会超出左右-15px，可设置margin-left:0和margin-top:0，是row与container同宽</p>
-</blockquote>
-<blockquote>
-<p>::before 和 ::after<br>  属性：content，在css渲染中向元素逻辑上的头部或尾部添加内容。这些添加不会出现在DOM中，不会改变文档内容，不可复制，仅仅是在css渲染层加入。<br>        content的值:string；attr()调用当前元素的属性，比如将图片alt提示文字或者链接的href地址显示出来；url()，引用媒体文件；counter()<br>        详细请见：<a href="https://www.cnblogs.com/starof/p/4459991.html" target="_blank" rel="noopener">https://www.cnblogs.com/starof/p/4459991.html</a></p>
-</blockquote>
-<blockquote>
-<p>.设置::before和::after伪类做背景叠加时，可设置z-index，使得伪类元素置上，底部之下，当底部有阴影渲染是不会污染到伪类元素</p>
-</blockquote>
-<p>GET方法，表单提交是被动的（比如搜索引擎查询），并且没有敏感信息，表单数据页面地址栏可见的。<br>POST方法，表单正在更新数据，或者包含敏感信息（例如密码）。POST 的安全性更加，因为在页面地址栏中被提交的数据是不可见的。</p>
+        <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>回流：重新对DOM树进行渲染，当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。渲染树和DOM树有点像，但是是有区别的。DOM树完全和html标签一一对应，但是渲染树会忽略掉不需要渲染的元素，比如head、display:none的元素<br>重绘：一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，如改变了背景颜色、文字颜色、边框颜色、vidibility、outline</p>
+<h3 id="触发reflow"><a href="#触发reflow" class="headerlink" title="触发reflow"></a>触发reflow</h3><p>1：改变窗口大小</p>
+<p>2：改变文字大小</p>
+<p>3：内容的改变，如文本改变或者图片大小改变而引起的计算值宽度和高度改变</p>
+<p>4：激活伪类，如:hover</p>
+<p>5：操作class属性</p>
+<p>6：脚本操作DOM</p>
+<p>7：计算offsetWidth和offsetHeight</p>
+<p>8：设置 display: none;（重排并重绘） 或者 visibility: hidden（只有重排）</p>
+<p>9： 移动、增加、删除页面中可见的DOM元素</p>
+<ol start="10">
+<li>元素位置，尺寸改变——边距、填充、边框、宽度和高度，设置style的值</li>
+</ol>
+<h3 id="优化，避免回流"><a href="#优化，避免回流" class="headerlink" title="优化，避免回流"></a>优化，避免回流</h3><ol>
+<li><p>CSS中的定位、隐藏，使用position：absolute/fixed定位；或者是display：none，使之脱离文档流后进行操作，操作完成后再进入到文档流之中。通过 display: none 来隐藏节点（直接导致一次重排和重绘），做大量的修改，然后显示节点（又一次重排和重绘），总共只会有两次重排。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 不好的代码</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateAllAnchors</span>(<span class="params">element, anchorClass</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> anchors = element.getElementsByTagName(<span class="string">"tr"</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, length = anchors.length; i &lt; length; i ++) &#123;</span><br><span class="line">    anchors[i].className = anchorClass; <span class="comment">// 一直重排、回流</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 优化代码</span></span><br><span class="line"><span class="comment">// 首先把表格删除，放到DOM树外部操作</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeToInsertLater</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> parentNode = element.parentNode;</span><br><span class="line">  <span class="keyword">var</span> nextSibling = element.nextSibling;</span><br><span class="line">  parentNode.removeChild(element);    </span><br><span class="line">  <span class="comment">// 或设置element.style.display = "none";</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nextSibling) &#123;</span><br><span class="line">      parentNode.insertBefore(element, nextSibling);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      parentNode.appendChild(element);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//然后调用它</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">updateAllAnchors</span>(<span class="params">element, anchorClass</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> insertFunction = removeToInsertLater(element);</span><br><span class="line">  <span class="keyword">var</span> anchors = element.getElementsByTagName(<span class="string">"a"</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, length = anchors.length; i &lt; length; i ++) &#123;</span><br><span class="line">    anchors[i].className = anchorClass;</span><br><span class="line">  &#125;</span><br><span class="line">  insertFunction();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过class统一设置样式，避免使用document.element.style.prototype来意义改变。不要立即做操作，而是批量进行。比如把脚本对DOM的修改放入一个队列，在队列所有操作结束后只需要进行一次绘制即可。</p>
+</li>
+<li><p>不要用tables布局的另一个原因就是tables中某个元素一旦触发reflow就会导致table里所有的其它元素reflow。在适合用table的场合，可以设置table-layout为auto或fixed，使得table一行一行渲染</p>
+</li>
+<li><p>css里不要有表达式expression</p>
+</li>
+<li><p>避免不必要的复杂的 CSS 选择器，尤其是后代选择器（descendant selectors），因为为了匹配选择器将耗费更多的 CPU。</p>
+</li>
+<li><p>尽量不要过多的频繁的去增加，修改，删除元素，因为这可能会频繁的导致页面reflow，可以先把该dom节点抽离到内存中进行复杂的操作然后再display到页面上。</p>
+</li>
+<li><p>请求如下值offsetTop, offsetLeft, offsetWidth, offsetHeight，scrollTop/Left/Width/Height，clientTop/Left/Width/Height，浏览器会发生reflow。需要经常取那些引起浏览器重排的属性值时，要缓存到变量，减少回流次数。</p>
+</li>
+</ol>
 
       
     </div>
@@ -573,7 +525,7 @@
       
         <div class="post-tags">
           
-            <a href="/markdownBlog.github.io/tags/summery/" rel="tag"><i class="fa fa-tag"></i>summery</a>
+            <a href="/markdownBlog.github.io/tags/回流-重排-和重绘/" rel="tag"><i class="fa fa-tag"></i>回流(重排)和重绘</a>
           
         </div>
       
@@ -586,8 +538,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/markdownBlog.github.io/2019/03/21/learnVue/" rel="next" title="Vue Summarize Part 1">
-                <i class="fa fa-chevron-left"></i> Vue Summarize Part 1
+              <a href="/markdownBlog.github.io/2019/09/19/debounceAndThrottle/" rel="next" title="debounceAndThrottle">
+                <i class="fa fa-chevron-left"></i> debounceAndThrottle
               </a>
             
           </div>
@@ -595,10 +547,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/markdownBlog.github.io/2019/08/04/reviewJs/" rel="prev" title="reviewJs">
-                reviewJs <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -649,8 +597,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -790,6 +747,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#触发reflow"><span class="nav-number">2.</span> <span class="nav-text">触发reflow</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化，避免回流"><span class="nav-number">3.</span> <span class="nav-text">优化，避免回流</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
