@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="seasonin">
 <meta property="og:description" content="v-html:输出html内容将在div块内插入html内容1234&amp;lt;div v-html=&amp;quot;template&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;data:&amp;#123;     template:&amp;apos;&amp;lt;div&amp;gt;hello template&amp;lt;/div&amp;gt;&amp;apos;&amp;#125; 标签内可绑定属性值，js运算，三目运算，过滤器12345678910">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-30T13:35:38.044Z">
+<meta property="og:updated_time" content="2020-02-11T15:20:36.850Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue Summarize Part 1">
 <meta name="twitter:description" content="v-html:输出html内容将在div块内插入html内容1234&amp;lt;div v-html=&amp;quot;template&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;data:&amp;#123;     template:&amp;apos;&amp;lt;div&amp;gt;hello template&amp;lt;/div&amp;gt;&amp;apos;&amp;#125; 标签内可绑定属性值，js运算，三目运算，过滤器12345678910">
@@ -436,7 +436,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-30 21:35:38" itemprop="dateModified" datetime="2019-06-30T21:35:38+08:00">2019-06-30</time>
+                <time title="修改时间：2020-02-11 23:20:36" itemprop="dateModified" datetime="2020-02-11T23:20:36+08:00">2020-02-11</time>
               
             
           </span>
@@ -531,6 +531,9 @@
 <p>几种常用的调试方法</p>
 </blockquote>
 <p>1.console.log()<br>2.console.error()<br>3.alert()<br>4.debugger<br>5.Vue插件<br>6.Network，查看加载的项，查询http请求；调试页面交互，选择阻塞运行，online选项可选择相应的网速<br>7.window.vue = this 代替debugger，console窗口输入window.vue.元素，window对象绑定<br>8.var app = new vue({})，通过app.元素调试，vm实例</p>
+<h3 id="store"><a href="#store" class="headerlink" title="store"></a>store</h3><p>store/modles/test<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">  <span class="comment">// 共享的数据</span></span><br><span class="line">  count: <span class="number">0</span>,</span><br><span class="line">  list: [<span class="number">1</span>, <span class="number">2</span>, <span class="number">25</span>, <span class="number">63</span>, <span class="number">18</span>, <span class="number">50</span>, <span class="number">30</span>, <span class="number">20</span>, <span class="number">13</span>, <span class="number">8</span>, <span class="number">63</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getters = &#123;</span><br><span class="line">  <span class="comment">// 处理computer里面获取到的数据</span></span><br><span class="line">  filterList: <span class="function"><span class="params">state</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> state.list.filter(<span class="function"><span class="params">item</span> =&gt;</span> item &gt; <span class="number">20</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mutations = &#123;</span><br><span class="line">  <span class="comment">// 改变state里的数据的方法，使用this.$store.commit()调用</span></span><br><span class="line">  increment (state, params) &#123;</span><br><span class="line">    state.count += params.n</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> actions = &#123;</span><br><span class="line">  <span class="comment">// 处理业务逻辑，异步操作数据，通过$store.dispatch触发</span></span><br><span class="line">  asyncIncrement (context) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">const</span> random = <span class="built_in">Math</span>.random()</span><br><span class="line">      <span class="built_in">console</span>.log(random)</span><br><span class="line">      <span class="keyword">if</span> (random &gt; <span class="number">0.5</span>) &#123;</span><br><span class="line">        resolve(random)</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        reject(random)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="comment">// 解决不同模块命名冲突的问题</span></span><br><span class="line">  namespaced: <span class="literal">true</span>,</span><br><span class="line">  state,</span><br><span class="line">  getters,</span><br><span class="line">  mutations,</span><br><span class="line">  actions</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>store/index.js<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    <span class="comment">// 模块化，方便检查和使用</span></span><br><span class="line">    test</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>在其他组件使用<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">computed: &#123;</span><br><span class="line">  ...mapState(<span class="string">'test'</span>, &#123;</span><br><span class="line">    <span class="comment">// 访问test模块的count数据</span></span><br><span class="line">    count: <span class="function"><span class="params">state</span> =&gt;</span> state.count</span><br><span class="line">  &#125;),</span><br><span class="line">  ...mapGetters(<span class="string">'test'</span>, &#123;</span><br><span class="line">    <span class="comment">// 利用getter过滤数据</span></span><br><span class="line">    list: <span class="string">'filterList'</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">  ...mapMutations(<span class="string">'test'</span>, &#123;</span><br><span class="line">    <span class="comment">// 调用test模块的increment方法，监听按钮的@click="handleIncreCount(&#123;n: 5&#125;)"即可调用</span></span><br><span class="line">    handleIncreCout: <span class="string">'increment'</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -631,8 +634,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -649,7 +661,7 @@
                 
                   <a href="/markdownBlog.github.io/archives/">
                 
-                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -727,7 +739,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -778,6 +792,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#store"><span class="nav-number">1.</span> <span class="nav-text">store</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
